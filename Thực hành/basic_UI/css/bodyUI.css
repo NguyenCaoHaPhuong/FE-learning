@@ -1,0 +1,248 @@
+body { 
+    height: 100vh;
+    /* width: 100vw; */
+    background-color: #101010;
+}
+
+.container {
+    width: 100%;
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+    max-width: 2000px;
+    background-color: #101010 !important;
+}
+
+.container-header {
+    display: flex;
+    /* flex: 1; */
+    align-content: center;
+    flex-direction: row;
+    margin: 50px 250px 0px;
+    background-color: #101010;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #55acee;
+}
+
+.header-left {
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    background-color: #101010;
+}
+
+.header-left li {
+    margin-right: 5px;
+    background-color: #101010;
+}
+
+.date-b {
+    font-size: 14px;
+    color: #bcbcbc;
+    font-family: 'Arial', sans-serif;
+    margin-left: auto;
+    background-color: #101010 !important;
+}
+
+.heading {
+    color: #ffffff;
+    margin: 0px 250px;
+    font-family: "Merriweather", serif;
+    background-color: #101010;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 160%;
+    font-family: 'Arial', sans-serif;
+    margin: 0px 250px 10px;
+    color: #bdbdbd;
+    background-color: #101010;
+}
+
+.place {
+    color: #757575;
+    background-color: #101010;
+}
+
+.content {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 160%;
+    font-family: 'Arial', sans-serif;
+    margin: 0px 250px 10px;
+    background-color: #101010;
+}
+
+.content-footer {
+    color: #ffffff;
+    background-color: #101010;
+}
+
+.author {
+    font-size: 18px;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin-left: auto;
+    padding: 0px 260px;
+    background-color: #101010;
+}
+
+.extra-news {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 260px;
+    color: #ffffff;
+    border: 15px solid #222222;
+    background-color: #101010;
+}
+
+.item-news {
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    border-bottom: 1px solid #E5E5E5;
+    background-color: #222222;
+}
+
+.content-news {
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 160%;
+    color: #ffffff;
+}
+
+.ques {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 160%;
+    color: #ffffff;
+    background-color: #2d2d2d;
+    align-items: center;
+    flex: 1;
+    align-content: center;
+    justify-content: center;
+    margin: 0px 50px;
+}
+
+.send-email {
+    background-color: #ffffff;
+    margin: 0px 150px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.E-left {
+    margin: 0px 20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: top;
+    flex-direction: column;
+}
+
+.VN-newsletter {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+
+.E-right {
+    margin: 20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: top;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.email {
+    display: flex;
+    flex-direction: row;
+}
+
+.chosen-b {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+}
+
+.chosen-b button {
+    background-color: #ffffff;
+    margin: 7px;
+    font-size: 14px;
+    width: 190px;
+    height: 30px;
+    align-self: center;
+}
+
+@media (max-width: 1024px) {
+    .container-header,
+    .heading,
+    .description,
+    .content,
+    .author,
+    .extra-news {
+        margin: 0px 50px;
+    }
+
+    .send-email {
+        margin: 0px 50px;
+    }
+
+    .E-right {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-left {
+        justify-content: center;
+    }
+
+    .author,
+    .extra-news,
+    .description,
+    .content {
+        margin: 0px 20px;
+    }
+
+    .ques {
+        margin: 0px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        text-align: center;
+    }
+
+    .chosen button {
+        width: 100%;
+    }
+
+    .send-email {
+        flex-direction: column;
+    }
+}

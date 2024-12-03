@@ -1,0 +1,144 @@
+body {
+    height: 100vh;
+    /* width: 100vw; */
+    background-color: #ffffff;
+}
+
+.container-h {
+    display: flex;
+    flex-direction: column;
+    height: 15%;
+    padding: 0px 60px;
+    box-sizing: border-box;
+}
+
+.heading1 {
+    display: flex;
+    flex: 1;
+    /* width: 100%; */
+    border-bottom: 1px solid #E5E5E5;
+    align-content: center;
+    flex-direction: row;
+    background-color: #ffffff;
+}
+
+.heading2 {
+    flex: 1;
+    border-bottom: 1px solid;
+    align-content: center;
+    background-color: #ffffff;
+}
+
+.heading-left {
+    flex: 1;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    padding: 8.5px 0px;
+    background-color: #ffffff;
+}
+
+.heading-right {
+    flex: 1;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    padding: 8.5px 0px;
+    background-color: #ffffff;
+    justify-content: right;
+}
+
+.date, .address, .lately, .area-news, .logo-inter, .login {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #838383;
+    background-color: #ffffff !important;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-inter, .login {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    flex: 1;
+    /* width: 100%; */
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #010101;
+    padding: 12px 30px;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.header li {
+    margin: 4px;
+}
+
+/* Responsive CSS */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0px 30px;
+    }
+
+    .header {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .header li {
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        padding: 0px 15px;
+    }
+
+    .heading1, .heading2 {
+        flex-direction: column;
+        border-bottom: none;
+    }
+
+    .heading-left, .heading-right {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+    .container {
+        padding: 0px 10px;
+    }
+
+    .heading-left, .heading-right {
+        align-items: center;
+        text-align: center;
+        padding: 5px 0;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thông Tin Hành Tinh</title>
+    <link rel="stylesheet" href="/css/formUI.css">
+</head>
+<body>
+    <img src="/image/planet sky.png" style="margin: 0px 250px; width: 748px;">
+    <div class="main">
+        <div class="heading">
+            <h2 style="color: #6948bc">THÔNG TIN VỀ HÀNH TINH</h2>
+        </div>
+        <br><br>
+        <div class="content">
+            <label><b>Câu 1:</b> Tên hành tinh</label>
+            <p id="planet_name"></p><br>
+            
+            <label><b>Câu 2:</b> Ngày được phát hiện</label>
+            <p id="discovery_date"></p><br>
+            
+            <label><b>Câu 3:</b> Loại hành tinh</label>
+            <p id="planet_type"></p><br>
+            
+            <label><b>Câu 4:</b> Những khoáng chất được tìm thấy</label>
+            <p id="minerals"></p><br>
+            
+            <label><b>Câu 5:</b> Bán kính (km)</label>
+            <p id="radius"></p><br>
+            
+            <label><b>Câu 6:</b> Mật khẩu hồ sơ hành tinh</label>
+            <p id="password"></p><br>
+            
+            <label><b>Câu 7:</b> Ảnh hành tinh</label>
+            <img id="planet_image" width="300px" /><br><br>
+            
+            <label><b>Câu 8:</b> Độ sáng</label>
+            <p id="brightness"></p><br><br>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const planetInfo = JSON.parse(localStorage.getItem('planetInfo'));
+
+            document.getElementById('planet_name').textContent = planetInfo.planet_name;
+            document.getElementById('discovery_date').textContent = planetInfo.discovery_date;
+            document.getElementById('planet_type').textContent = planetInfo.planet_type;
+            document.getElementById('minerals').textContent = planetInfo.minerals ? planetInfo.minerals : 'Không có khoáng chất';
+            document.getElementById('radius').textContent = planetInfo.radius + ' km';
+            document.getElementById('password').textContent = planetInfo.password;
+            document.getElementById('brightness').textContent = planetInfo.brightness;
+
+            const planetImage = planetInfo.planet_image ? planetInfo.planet_image : '';
+            if (planetImage) {
+                document.getElementById('planet_image').src = planetImage;
+            }
+        };
+    </script>
+</body>
+</html>

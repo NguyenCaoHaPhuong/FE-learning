@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thông Tin Hành Tinh</title>
+    <link rel="stylesheet" href="/css/formUI.css">
+</head>
+<body>
+    <div class="content">
+        <img src="/image/planet sky.png" style="margin: 0px 230px; width: 748px;">
+    </div>
+    <br>
+    <div class="main">
+        <div class="heading">
+            <h2 style="color: #6948bc">THÔNG TIN VỀ HÀNH TINH</h2>
+        </div>
+        <br><br>
+        <form id="planetForm" class="content">
+            <label>
+                <b>Câu 1:</b> Tên hành tinh
+                <br><br>
+                <input type="text" name="planet_name" placeholder="VD: Sao kim" required>
+            </label><br><br>
+            <label>
+                <b>Câu 2:</b> Ngày được phát hiện
+                <br><br>
+                <input type="date" name="discovery_date">
+            </label><br><br>
+            <label>
+                <b>Câu 3:</b> Loại hành tinh 
+                <br><br>
+                <input type="radio" name="planet_type" value="Hành tinh đất đá" required> Hành tinh đất đá 
+                <input type="radio" name="planet_type" value="Hành tinh khí"> Hành tinh khí
+                <input type="radio" name="planet_type" value="Hành tinh băng"> Hành tinh băng
+            </label><br><br>
+            <label>
+                <b>Câu 4:</b> Những khoáng chất được tìm thấy
+                <br><br>
+                <input type="checkbox" name="minerals" value="Olivine"> Olivine
+                <input type="checkbox" name="minerals" value="Pyroxene"> Pyroxene
+                <input type="checkbox" name="minerals" value="Hematite"> Hematite
+                <br><br>
+                <input type="checkbox" name="minerals" value="Magnetite"> Magnetite
+                <input type="checkbox" name="minerals" value="Silica"> Silica 
+                <input type="checkbox" name="minerals" value="Sulfate"> Sulfate
+                <br><br>
+                <input type="checkbox" name="minerals" value="Clay"> Clay 
+                <input type="checkbox" name="minerals" value="Tridymite"> Tridymite  
+                <input type="checkbox" name="minerals" value="Siderite"> Siderite 
+                <br><br>
+                Tên khoáng chất khác: 
+                <input type="text" name="other_mineral" placeholder="Khoáng chất khác">
+            </label><br><br>
+            <label>
+                <b>Câu 5:</b>Bán kính (km): 
+                <input type="number" name="radius" min="1000" max="200000" placeholder="Đơn vị km" required>
+            </label><br><br>
+            <label>
+                <b>Câu 6:</b> Mật khẩu hồ sơ hành tinh
+                <input type="password" name="password" required>
+            </label><br><br>
+            <label>
+                <b>Câu 7:</b> Ảnh hành tinh
+                <input type="file" name="planet_image" accept="image/*">
+            </label><br><br>
+            <label>
+                <b>Câu 8:</b>Độ sáng<br>
+                <input type="range" name="brightness" min="1" max="10">
+            </label><br><br>
+            <div class="button">
+                <button type="button" onclick="saveAndRedirect()" style="margin-right: 20px;"><b>Gửi thông tin</b></button>
+                <button type="reset"><b>Nhập lại thông tin</b></button>
+            </div><br><br><br>
+        </form>
+    </div>
+    <div class="result" id="result"></div>
+
+    <script>
+        function saveAndRedirect() {
+            const form = document.getElementById('planetForm');
+            const formData = new FormData(form);
+            const dataObject = {};
+    
+            const planetImage = formData.get('planet_image');
+            localStorage.clear();
+            if (planetImage) {
+                const reader = new FileReader();
+                reader.onloadend = function () {
+                    dataObject.planet_image = reader.result;
+                    formData.forEach((value, key) => {
+                        if (key !== 'planet_image') {
+                            dataObject[key] = value;
+                        }
+                    });
+                    localStorage.setItem('planetInfo', JSON.stringify(dataObject));
+    
+                    window.location.href = '/html/resultUI.html';
+                };
+                reader.readAsDataURL(planetImage);
+            } else {
+                formData.forEach((value, key) => {
+                    dataObject[key] = value;
+                });
+                localStorage.setItem('planetInfo', JSON.stringify(dataObject));
+                window.location.href = '/html/resultUI.html';
+            }
+        }
+    </script>    
+</body>
+</html>
